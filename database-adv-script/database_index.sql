@@ -12,3 +12,14 @@ CREATE INDEX idx_booking_start_date ON Booking(start_date);
 
 -- Index on Property.location
 CREATE INDEX idx_property_location ON Property(location);
+
+-- Performance check using EXPLAIN ANALYZE
+EXPLAIN ANALYZE
+SELECT *
+FROM Booking
+WHERE start_date BETWEEN '2025-07-01' AND '2025-07-10';
+
+EXPLAIN ANALYZE
+SELECT *
+FROM User
+WHERE email = 'johndoe@example.com';
