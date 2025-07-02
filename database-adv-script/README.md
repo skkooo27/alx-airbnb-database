@@ -18,3 +18,13 @@ This file contains examples of using SQL subqueries in the Airbnb database schem
 2. **Users with more than 3 bookings** – using a correlated subquery that filters by dynamic values from the outer query.
 
 These queries demonstrate how to extract insights by nesting SELECT statements.
+
+# Aggregations and Window Functions – Advanced SQL
+
+This file contains examples of aggregation and window functions.
+
+ Included Queries:
+1. Total bookings per user – using `COUNT()` and `GROUP BY`
+2. Ranking of properties – using `RANK()` with `OVER` for windowed ranking
+
+These queries provide insights on user activity and property popularity without collapsing the full dataset.
