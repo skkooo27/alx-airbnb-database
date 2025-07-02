@@ -14,15 +14,17 @@ INNER JOIN
 
 -- Show all properties and their reviews
 SELECT 
-    p.property_id,
-    p.name AS property_name,
-    r.review_id,
-    r.rating,
-    r.comment
+    Property.property_id,
+    Property.name AS property_name,
+    Property.location,
+    Review.review_id,
+    Review.rating,
+    Review.comment
 FROM 
-    Property p
+    Property
 LEFT JOIN 
-    Review r ON p.property_id = r.property_id;
+    Review ON Property.property_id = Review.property_id;
+
 
 -- Simulate FULL OUTER JOIN
 SELECT 
