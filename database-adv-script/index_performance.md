@@ -1,16 +1,18 @@
--- Index on User email
-CREATE INDEX idx_user_email ON User(email);
+# Index Performance Report
 
--- Index on Booking.user_id
-CREATE INDEX idx_booking_user_id ON Booking(user_id);
+## Created Indexes
+- User.email: speeds up login/user lookup
+- Booking.user_id and Booking.property_id: used in frequent JOINs
+- Booking.start_date: speeds up date range filters
+- Property.location: helps with city-based searches
 
--- Index on Booking.property_id
-CREATE INDEX idx_booking_property_id ON Booking(property_id);
+## Performance Testing
+Used EXPLAIN to test before and after adding indexes.
 
--- Index on Booking.start_date for date-based queries
-CREATE INDEX idx_booking_start_date ON Booking(start_date);
+Example:
 
--- Index on Property.location
-CREATE INDEX idx_property_location ON Property(location);
-
+sql
 EXPLAIN SELECT * FROM Booking WHERE start_date BETWEEN '2025-07-01' AND '2025-07-10';
+
+
+
