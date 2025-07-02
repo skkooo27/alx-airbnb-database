@@ -12,7 +12,8 @@ FROM
 INNER JOIN 
     User u ON b.user_id = u.user_id;
 
--- Show all properties and their reviews
+
+-- LEFT JOIN: Retrieve all properties and their reviews, including properties without reviews
 SELECT 
     Property.property_id,
     Property.name,
@@ -25,7 +26,9 @@ SELECT
 FROM 
     Property
 LEFT JOIN 
-    Review ON Property.property_id = Review.property_id;
+    Review ON Property.property_id = Review.property_id
+ORDER BY 
+    Property.property_id;
 
 
 -- Simulate FULL OUTER JOIN
