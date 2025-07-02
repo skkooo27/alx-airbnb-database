@@ -15,8 +15,10 @@ INNER JOIN
 -- Show all properties and their reviews
 SELECT 
     Property.property_id,
-    Property.name AS property_name,
+    Property.name,
+    Property.description,
     Property.location,
+    Property.pricepernight,
     Review.review_id,
     Review.rating,
     Review.comment
